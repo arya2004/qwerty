@@ -1,0 +1,20 @@
+type PostCreated @entity(immutable: true) {
+  id: Bytes!
+  Blog_id: BigInt! # uint256
+  title: String! # string
+  hash: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PostUpdated @entity(immutable: true) {
+  id: Bytes!
+  Blog_id: BigInt! # uint256
+  title: String! # string
+  hash: String! # string
+  published: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
