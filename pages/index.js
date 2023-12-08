@@ -74,11 +74,11 @@ export async function getServerSideProps() {
   if (process.env.ENVIRONMENT === 'local') {
     provider = new ethers.providers.JsonRpcProvider()
   } else if (process.env.ENVIRONMENT === 'testnet') {
-    provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today')
+    provider = new ethers.providers.JsonRpcProvider('https://polygon-mumbai.infura.io/v3/6cf15fb090244539aa83d17354369e86')
   } else {
     provider = new ethers.providers.JsonRpcProvider('https://polygon-rpc.com/')
   }
-
+  
   const contract = new ethers.Contract(contractAddress, Blog.abi, provider)
   const data = await contract.fetchPosts()
   return {
